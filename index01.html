@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Crossing series – Official Site</title>
+    <link href="./images/animalcrossinglogo.png" rel="shortcut icon" type="image/x-icon">
+    <link rel="stylesheet" href="./style/reset.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo&family=Dongle&family=Lato&family=Viga&display=swap" rel="stylesheet">
+    <style>
+        body{
+            overflow-x: hidden;
+        }
+        .header-container{
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e60012;
+            border-bottom:1px solid #ac000d;
+            height: 65px;
+        }
+        .header-contents{
+            display: flex;
+            margin: 50px;
+        }
+        .sign{
+            display: block;
+            width: 150px;
+            height: 40px;
+            border-radius: 10px;
+            background-color: #e60012;
+            font-size: 15px;
+            font-weight: bold;
+            margin:50px;
+            transition: .4s;
+            text-align: center;
+            line-height: 40px;
+        }
+        .sign>i{
+            color:white;
+        }
+        .sign span{
+            color:white;
+        }
+        .sign:hover{
+            background-color:#ac000d;
+            text-decoration: none;
+        }
+        .header-contents>h1{ font-size: 0; }
+        .bar{
+            height:35px;
+            background-color: #FFE46A;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .play{
+            width:200px;
+            height:20px;
+            overflow: hidden;
+        }
+        .play button{ 
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 17px;
+            font-weight: 500;
+            color:#834B16;
+            background-color: transparent;
+            border:none;
+        }
+        .play a:hover{text-decoration: none;}
+
+        /* section{
+            width:100%;
+            height:710px;
+            background-image: url(./images/hero-bg-desktop.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+            overflow: hidden;
+        } */
+        /* section{
+            background-color: #fcc52a;
+            height:350vh;
+        } */
+        /* error */
+
+        .mainBanner{
+            width: 100%;
+            height:720px;
+            background-image: url(./images/hero-bg-desktop.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+            overflow: hidden;
+            position: relative;
+        }
+        .mainBanner>h1{
+            font-family:'Arvo', serif;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            color: #834B16;
+            padding-top: 30px;
+        }
+        .mainBanner img:nth-of-type(1){
+            width: 400px;
+            position: absolute;
+            top:70px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .mainBanner img:nth-of-type(2){
+            width: 580px;
+            height: 300px;
+            position: absolute;
+            top: 390px;
+            left:50%;
+            transform: translateX(-50%);
+        }
+        .mainBanner p{
+            color:white;
+            text-shadow: 0 3px 3px black;
+            text-align: center;
+            font-size: 18px;
+            width: 380px;
+            position: absolute;
+            top:450px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Arvo', serif;
+        }
+        .mainBanner img:nth-of-type(3){
+            width: 330px;
+            position: absolute;
+            left: 65%;
+            top: 180px;
+        }
+
+        .birthday{
+            height: 200px;
+            background-image: url(./images/birthday-red_2x.jpg);
+            background-size: 15px;
+            position:relative;
+        }
+        .ribbon{
+            width: 1024px;
+            height:250px;
+            position:absolute;
+            left:50%;
+            top:-20px;
+            transform: translateX(-50%);
+            background-image: url(./images/birthday-ribbon.svg);
+            background-repeat: no-repeat;
+            background-size: 1024px 250px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .ribbon>div:nth-child(1){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-left: 100px;
+        }
+        .today{
+            font-size: 20px;
+            font-weight: bold;
+            color:#FFE46A;
+            text-shadow: 0 3px 3px #555;
+            font-family: 'Arvo', serif;
+            text-align: center;
+        }
+        .ribbon>div:nth-child(1)>div{
+            display: flex;
+            gap: 30px;
+        }
+        .birth{
+            font-size: 30px;
+            font-weight: bold;
+            color:white;
+            text-shadow: 0 3px 3px #555;
+            font-family: 'Arvo', serif;
+            text-align: center;
+            width: 300px;
+            padding-bottom: 20px;
+        }
+        .birthday a:hover{
+            text-decoration: none;
+        }
+        .left{
+            display: block;
+            background-color: #c40010;
+            color:#FFE46A;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 0 3px 0 1px #8d000c;
+            width: 40px;
+            height:40px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        .left>span{
+            color:#FFE46A;
+        }
+        .left:hover{
+            background-color: #8d000c;
+        }
+        .right{
+            display: block;
+            background-color: #c40010;
+            text-align: center;
+            line-height: 40px;
+            color:#FFE46A;
+            box-shadow: 0 3px 0 1px #8d000c;
+            width: 40px;
+            height:40px;
+            font-size: 20px;
+            border-radius: 10px;
+        }
+        .right>span{
+            color:#FFE46A;
+        }
+        .right:hover{
+            background-color: #8d000c;
+        }
+
+        .ribbon>div:nth-of-type(2){
+            position: relative;
+        }
+        .ribbon>div:nth-of-type(2)>img:nth-of-type(1){
+            width:400px;
+            height: 200px;
+            position:absolute;
+            left:50%;
+            transform: translateX(-60%);
+            top: -100px;
+        }
+        .ribbon>div:nth-of-type(2)>img:nth-of-type(2){
+            width:250px;
+            position: absolute;
+            left:50%;
+            transform: translateX(-60%);
+            top: -120px;
+        }
+
+        .ribbon>div:nth-of-type(3){
+            padding-right: 80px;
+            padding-bottom: 10px;
+        }
+        .gift{
+            background-color: #c40010;
+            width:200px;
+            height:200px;
+            border-radius: 50%;
+            border:none;
+
+            box-shadow: 0 3px 5px #8d000c;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .gift:hover{
+            background-color: #8d000c;
+        }
+        .gift p{
+            width: 150px;
+            text-align: center;
+            font-size: 17px;
+            font-weight: bold;
+            color:#FFE46A;
+            font-family: 'Arvo', serif;
+        }
+
+
+        .news{
+            background-color: #fcc52a;
+            height:720px;
+        }
+        /* error */
+        .newsBox{
+            background-image: url(./images/triangles-yellow.png);
+            background-size:180px;
+            background-position: top center;
+            height:360px;
+        }
+        .newsBox>h1{
+            font-size: 40px;
+            font-family:'Arvo', serif;
+            font-weight: bold;
+            text-align: center;
+            color: #834B16;
+            padding-top: 80px;
+            padding-bottom: 30px;
+        }
+        .itemBox{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            gap: 50px;
+            padding-bottom: 50px;
+
+            position: relative;
+        }
+        .item{
+            width:360px;
+            height:400px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px -5px #555;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .item:hover{
+            outline: 10px solid #8d000c;
+        }
+        .item>div:nth-of-type(1){ 
+            padding:20px;
+            font-family: 'Arvo', serif;
+            color: #36AFB6;
+        }
+        .item p{
+            color: #834B16;
+            font-family: 'Arvo';
+            font-size: 18px;
+            text-align: center;
+            font-weight: bold;
+            width: 300px;
+            height: 60px;
+            padding-bottom: 20px;
+        }
+        .item img{
+            padding: 20px;
+            border-radius: 40px;
+        }
+        .item a{
+            color:#C4161C;
+            font-size:18px;
+            font-weight: bold;
+            font-family: 'Arvo';
+        }
+
+        /* .seeNews{
+            background-color: #C4161C;
+            box-shadow: 0 8px 8px -5px #555;
+            border-radius: 15px;
+            font-weight: bold;
+            font-family: 'Arvo';
+            font-size: 20px;
+            position: absolute;
+            left:50%;
+            text-align: center;
+
+            width:220px;
+            line-height: 45px;
+        } */
+        .read{
+            background-color: #C4161C;
+            box-shadow: 0 8px 8px -5px #555;
+            border-radius: 15px;
+            font-weight: bold;
+            font-family: 'Arvo';
+            font-size: 20px;
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            width:220px;
+            line-height: 45px;
+        }
+        .read>span{
+            color:#FFE46A;
+        }
+        .read:hover{
+            text-decoration: none;
+            background-color: #8d000c;
+        }
+
+        .video{
+            background-color: #fcc52a;
+            height:650px;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        /* error */
+        .video iframe{
+            border: 10px solid white;
+        }
+        .video h1{
+            color: #834B16;
+            font-family: 'Arvo';
+            padding:20px;
+        }
+        .video p{
+            color:#834B16;
+            font-family: 'Arvo';
+            width:800px;
+            font-size: 20px;
+            text-align: center;
+            padding-bottom: 20px;
+        }
+        .web{
+            background-color: #C4161C;
+            box-shadow: 0 8px 8px -5px #555;
+            border-radius: 15px;
+            font-weight: bold;
+            font-family: 'Arvo';
+            font-size: 20px;
+            position: absolute;
+            left:50%;
+            transform: translateX(-50%);
+            text-align: center;
+
+            width:250px;
+            line-height: 45px;
+        }
+        .web>span{
+            color:#FFE46A;
+        }
+        .web:hover{
+            text-decoration: none;
+            background-color: #8d000c;
+        }
+
+
+        .Yellow{
+            background-color: #fcc52a;
+            height: 100px;
+            border-radius: 0 0 100% 100%;
+        }
+
+        .balloon>img{
+            width: 200px;
+            position:absolute;
+            top:250px;
+            animation: 8s movingBalloon ease-in-out infinite;
+        }
+
+
+        .otherGames{
+            background-image: url(./images/apple-border-top_2x.png),
+                            linear-gradient(skyblue, white 80%);
+            background-repeat: repeat-x;
+            background-size: 1200px;
+            background-position-y: 50px;
+            height: 720px;
+            position: relative;
+        }
+        .otherGames h1{
+            font-family:'Arvo', serif;
+            font-weight: bold;
+            font-size: 40px;
+            text-align: center;
+            color: #834b16;
+            padding-top: 100px;
+            padding-bottom: 50px;
+        }
+        .gameContents{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+        .sort{
+            width: 350px;
+            /* height: 400px; */
+            position:relative;
+        }
+        .sort:hover .sub{
+            display: block;
+        }
+        .sort>li>a>div>img{
+            border-radius: 20px;
+            /* outline: 10px solid white; */
+            border: 10px solid white;
+        }
+        .sort>li>a>div+p{
+            font-family: 'Arvo';
+            color:#007F88;
+
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 130px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 0 0 20px 20px;
+            margin:auto;
+        }
+        .sort>li>a:hover{
+            text-decoration: none;
+        }
+
+        .sub{
+            position: absolute;
+            display: none;
+            top: 200px;
+        }
+        .sub1{
+            height: 155px;
+            background-color: white;
+            width: 374px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 5px 5px -5px gray;
+        }
+        .sub2{
+            height: 180px;
+            background-color: white;
+            width: 374px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 5px 5px -5px gray;
+        }
+        .sub3{
+            height: 180px;
+            background-color: white;
+            width: 374px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 5px 5px -5px gray;
+        }
+        .sub>li>a>div>p:nth-of-type(1){
+            padding-top:20px;
+            font-family: 'Arvo';
+            color: #007F88;
+            padding-bottom: 1em;
+            padding-left: 10px;
+        }
+        .sub>li>a>div>p:nth-of-type(2){
+            font-family: 'Arvo';
+            color: #834B16;
+            font-size: 20px;
+            padding-bottom: 1em;
+            padding-left:10px;
+        }
+        .sub>li>a:hover{
+            text-decoration: none;
+        }
+
+        .LearnBtn{
+            display:block;
+            background-color: #C4161C;
+            box-shadow: 0 8px 8px -5px #555;
+            border-radius: 15px;
+            font-weight: bold;
+            font-family: 'Arvo';
+            font-size: 20px;
+            text-align: center;
+            margin: auto;
+
+            width:350px;
+            line-height: 45px;
+        }
+        .LearnBtn:hover{
+            text-decoration: none;
+            background-color: #8d000c;
+        }
+        .LearnBtn>span{
+            color:#FFE46A;
+        }
+
+        .otherGames>div:nth-of-type(5){
+            color: #007F88;
+            font-family: 'Arvo';
+            font-size: 18px;
+            margin: auto;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 10px;
+        }
+        .sortMenu>ul{
+            display: flex;
+            gap: 50px;
+            color: #007F88;
+            font-family: 'Arvo';
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            justify-content: center;
+            padding-bottom: 50px;
+        }
+        .sortMenu>ul>li>a:hover{
+            text-decoration: none;
+        }
+
+
+        .figures-container{
+            position: relative;
+            height: 1018px;
+            overflow:hidden;
+        }
+        .leaf{
+            position: absolute;
+            background-color: #01A623;
+            background-image: url(./images/green-triangles.png);
+            background-size: 150px;
+            border-radius: 50% 50% 0 0;
+            width: 150%;
+            height: 800px;
+            left: -25%;
+        }
+        .leaf>div>h1{
+            font-family:'Arvo', serif;
+            font-size: 40px;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            padding-bottom: 100px;
+            text-shadow: 0 3px 3px #555;
+        }
+        .leaf>div>h1>sup{
+            font-size:18px;
+            font-family:sans-serif;
+        }
+        .figures>ul{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 80px;
+        }
+        .figures>ul>li>a{
+            display: block;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            background-color: #5EC34D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .figures>ul>li>a:hover{
+            text-decoration: none;
+        }
+        .figure>img{
+            transition: .2s
+        }
+        .figures>ul>li>a:hover .figure>img{
+            transform: scale(1.1);
+            transition: .2s
+        }
+        .figures>ul>li>a>div>img{
+            width: 210px;
+            padding-bottom: 10px;
+        }
+        .figures>ul>li>a span{
+            background-color: rgba(0,0,0,0.3);
+            padding: 5px 10px;
+            font-size: 18px;
+            font-family: 'Arvo';
+            font-weight: bold;
+            color: white;
+            white-space: nowrap;
+            margin-top: 20px;
+            border-radius: 10px;
+        }
+        .catalog{
+            padding-top: 100px;
+        }
+        .catalog>a{
+            display: block;
+            background-color: #FDD10A;
+            text-align: center;
+            box-shadow: 0 8px 8px -5px #555;
+            border-radius: 15px;
+            width:280px;
+            height: 60px;
+            line-height: 60px;
+            margin:auto;
+        }
+        .catalog>a>span{
+            font-family: 'Arvo';
+            font-size: 20px;
+            font-weight: bold;
+            color: #834B16
+        }
+        .catalog>a:hover{
+            text-decoration: none;
+            background-color: #ffeb91;
+        }
+        .town-image{
+            background-image: url(./images/town-footer_2x.png);
+            background-position: center bottom;
+            background-size: 1500px;
+            width: 100%;
+            height: 400px;
+        }
+
+
+        .play-container{
+            background-color: #fdfdea;
+            background-image: url(./images/play-dots.png);
+            background-size: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 700px;
+            overflow-x: hidden;
+        }
+        .play-contents>div>h1{
+            color:#834B16;
+            font-size:36px;
+            font-family: 'Arvo';
+            text-align: center;
+            margin: auto;
+            padding-bottom: 50px;
+        }
+        .play-contents{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .plays>ul{
+            display: flex;
+            gap: 50px;
+        }
+        .plays>ul>li>a:hover{
+            text-decoration: none;
+        }
+        .plays>ul>li{
+            padding-bottom:30px;
+        }
+        .kart img{
+            width:190px;
+            height: 190px;
+        }
+        .kart{
+            position: relative;
+            width: 380px;
+            height: 190px;
+            display:flex;
+            box-shadow: 0 3px 3px gray;
+            transition: .4s;
+        }
+        .playBox{
+            width: 190px;
+            height: 190px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .playBox h4{
+            font-family: 'Viga';
+            font-weight: normal;
+            font-size: 16px;
+            padding: 10px 0;
+        }
+        .playBox p{
+            font-family: 'Lato';
+            font-size: 12px;
+        }
+        .playBox1{
+            background-color: #AAFFE6;
+            text-align: right;
+            padding: 10px;
+        }
+        .playBox1>div>div>span{
+            padding: 5px;
+            background-color: #FFFFFF80;
+            font-family: 'Lato';
+            font-size: 12px;
+        }
+        .playBox1>div{
+            width: 140px;
+            position: relative;
+            right: -30px;
+        }
+        .playBox2{
+            background-color: #1DDB81;
+            text-align: left;
+            padding: 10px;
+        }
+        .playBox2>div>div>span{
+            padding: 5px;
+            background-color: #FFFFFF80;
+            font-family: 'Lato';
+            font-size: 12px;
+        }
+        .playBox2>div{
+            width:140px;
+        }
+        .playBox3{
+            background-color: #00D2FF;
+            text-align: left;
+            padding: 10px;
+        }
+        .playBox3>div>div>span{
+            padding: 5px;
+            background-color: #FFFFFF80;
+            font-family: 'Lato';
+            font-size: 12px;
+        }
+        .playBox3>div{
+            width:140px;
+        }
+        .playBox4{
+            background-color:#EE0500;
+            color:white;
+            text-align: left;
+            padding: 10px;
+        }
+        .playBox4>div>div>span{
+            padding: 5px;
+            background-color: #0000004D;
+            font-family: 'Lato';
+            font-size: 12px;
+        }
+        .playBox4>div{
+            width:140px;
+        }
+        .circle{
+            width:50px;
+            height: 50px;
+            background-color: white;
+            border-radius: 50%;
+            color: #00D2FF;
+            box-sizing: content-box;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+        .circle1{
+            border: 8px solid #AAFFE6;
+        }
+        .circle2{
+            border: 8px solid #1DDB81;
+        }
+        .circle3{
+            border: 8px solid #00D2FF;
+        }
+        .circle4{
+            border: 8px solid #EE0500;
+        }
+        .circle>span{
+            font-size: 30px;
+            text-align: center;
+        }
+        .playLink>li>a:hover .kart{
+            box-shadow: 0 5px 10px gray;
+            transition: .4s;
+        }
+        .playTitle{
+            transition: .3s;
+        }
+        .playLink>li>a:hover .playTitle{
+            transform: rotateX( 360deg );
+        }
+
+        .SNS-container{
+            position: relative;
+            background-color: #fdfdea;
+            background-image: url(./images/play-dots.png);
+            background-size: 30px;
+            height: 320px;
+            overflow-x: hidden;
+        }
+        .SNS-bg{
+            background-image: url(./images/green-triangles.png);
+            position: absolute;
+            background-color: #01A623;
+            background-image: url(./images/green-triangles.png);
+            background-size: 150px;
+            border-radius: 50% 50% 0 0;
+            width: 150%;
+            height: 300px;
+            left: -25%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .SNS-bg>div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .btnBox{
+            background-image: url(./images/facebook-speechbubble_2x.png);
+            background-repeat: no-repeat;
+            background-size: 550px;
+            width: 550px;
+            height: 100px;
+            text-align: center;
+            line-height: 90px;
+        }
+        .snsBtn{
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Arvo';
+            color: #834B16;
+        }
+        .ribbon-bottom{
+            background-image: url(./images/birthday-red_2x.jpg);
+            background-size: 20px;
+            width: 100%;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+        }
+
+
+        .support-container{
+            background-color: #f7aa18;
+            background-image: url(./images/play-dots.png);
+        }
+        .tree-bg{
+            background-image: url(./images/fir-tree-border.png);
+            background-size: 1000px;
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 150px;
+        }
+        .supportBtn>a{
+            display: block;
+            background-color: #FDD10A;
+            text-align: center;
+            box-shadow: 0 7px 5px -5px rgb(109, 75, 40);
+            border-radius: 15px;
+            width:330px;
+            height: 60px;
+            line-height: 60px;
+            margin:auto;
+        }
+        .supportBtn>a>span{
+            font-family: 'Arvo';
+            font-size: 20px;
+            font-weight: bold;
+            color: #834B16
+        }
+        .supportBtn>a:hover{
+            text-decoration: none;
+            background-color: #ffeb91;
+        }
+        .support-contents{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .sns-icons{
+            display: flex;
+            padding-top: 50px;
+            gap: 50px;
+        }
+        .follow-text>h3{
+            text-align: center;
+            padding-bottom: 10px;
+        }
+        .follow-sns{
+            display: flex;
+            gap:20px;
+        }
+        .facebook-icon>a>img{
+            width: 48px;
+            border-radius: 10%;
+        }
+        .twitter-icon>a>img{
+            width: 48px;
+            border-radius: 10%;
+        }
+        .youtube-icon>a>img{
+            width: 48px;
+            border-radius: 10%;
+        }
+        .insta-icon>a>img{
+            width: 48px;
+            border-radius: 10%;
+        }
+        .esrb{
+            display: flex;
+            gap: 20px;
+        }
+        .esrb1{
+            width: 60px;
+        }
+        .esrb2{
+            width: 66.5px;
+        }
+
+        .footer-link>ul{
+            font-family: 'Lato';
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            font-size: 12px;
+            color:black;
+            padding-top: 20px;
+        }
+        .footer-link span{
+            padding-left: 20px;
+        }
+
+        .footer-text{
+            font-family: 'Lato';
+            font-size: 12px;
+            color:black;
+            text-align: center;
+            padding: 50px;
+            line-height: 2em;
+        }
+
+
+        @keyframes movingBalloon {
+            0%{
+                transform: translateY(-25px);
+            }
+            50%{
+                transform: translateY(0);
+            }
+            100%{
+                transform: translateY(-25px);
+            }
+            /* from {
+                transform: translateX(-300px);
+            }
+            to {
+                transform:translateX(1600px);
+            } */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="header-contents">
+                <h1><a href="index.html">Nintendo<img src="./images/nintendo-racetrack.svg" alt=""></a></h1>
+            </div>
+            <nav class="lnb">
+                <a href="#" class="sign"><i class='bx bxs-user'></i> <span>Log in / Sign up</span></a>
+            </nav>
+        </div>
+        <div class="bar">
+            <div class="play">
+                <button class="rdc"><a href="#" class="reduce">REDUCE MOTION<i class='bx bx-pause'></i></a></button>
+                <button class="enb"><a href="#" class="enable">ENABLE MOTION<i class='bx bx-play' ></i></a></button>
+            </div>
+        </div>
+    </header>
+    <section>
+        <div class="tr"></div>
+        <div class="mainBanner">
+            <h1>Official home of</h1>
+            <img src="./images/logo.png" alt="">
+            <img src="./images/sign_2x.png" alt="">
+            <p>Make friends with adorable animal villagers and have fun creating a world of your own in the Animal Crossing series.</p>   
+            <img src="./images/isabelle.png" alt=""> 
+        </div>
+        <!-- birthday -->
+        <div class="birthday">
+            <div class="ribbon">
+                <!-- <img src="./images/birthday-ribbon.svg" alt=""> -->
+
+                <div>
+                    <span class="today">Today is</span>
+                    <span class="birth">Daisy's Birthday</span>
+                    <div>
+                        <a href="#" class="left"><span>◀️</span></a>
+                        <a href="#" class="right"><span>▶️</span></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <img src="./images/confetti_2x.png" alt="">
+                    <img src="./images/CTRP_EAA_NPC-dog07_1_R_ad.png" alt="">
+                </div>
+                <div>
+                    <a href="#" class="gift">
+                        <img src="./images/birthday-giftbox.png" alt="">
+                        <p>Celebrate this birthday!</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="news">
+            <div class="newsBox">
+                <h1>Animal Crossing News</h1>
+                <div class="itemBox">
+                    <div class="item">
+                        <div>
+                            <h3>Jul 13, 2022</h3>
+                        </div>
+                        <div>
+                            <p>Hot deals coming to Amazon Prime Day</p>
+                        </div>
+                        <div><img src="./images/Switch_PrimeDay2022_Software_1920x1080.jpg" alt=""></div>
+                        <div><a href="#">Keep reading ></a></div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <h3>Jun 03, 2022</h3>
+                        </div>
+                        <div>
+                            <p>Make room for June delights in Animal Crossing: Pocket Camp</p>
+                        </div>
+                        <div><img src="./images/2205304banner_Option_2.jpg" alt=""></div>
+                        <div><a href="#">Keep reading ></a></div>
+                    </div>
+                    <div class="item">
+                        <div>
+                            <h3>Apr 29, 2022</h3>
+                        </div>
+                        <div>
+                            <p>Gracie graces the campsite this May in Animal Crossing: Pocket Camp</p>
+                        </div>
+                        <div><img src="./images/MAY_ACPC.png" alt=""></div>
+                        <div><a href="#">Keep reading ></a></div>
+                    </div>
+                </div>
+                <div class="seeNews"><a href="#" class="read"><span>See all news</span></a></div>
+            </div>
+        </div>
+
+        <div class="video">
+            <div>
+                <iframe width="896" height="480" src="https://www.youtube.com/embed/QZMaL6mp35Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <div><h1>Animal Crossing: New Horizons</h1></div>
+            <div>
+                <p>
+                    New to Animal Crossing: New Horizons? Come get the lay of the land and learn what to expect when you set out to create your own island paradise. If you’re an island life veteran already, we hope you will share this video with newcomers and welcome them with open arms!
+                </p>
+            </div>
+            <div><a href="#" class="web"><span>Visit the website</span></a></div>
+        </div>
+
+        <div class="otherGames">
+            <div class="Yellow"></div>
+            <div class="balloon"><img src="./images/char-balloon_2x.png" alt=""></div>
+            <div><h1>Featured Animal Crossing games</h1></div>
+            <div class="gameContents">
+                <ul class="sort sort1">
+                    <li>
+                        <a href="#">
+                            <div><img src="./images/ac-pocket-camp.png" alt=""></div>
+                            <p>iOS/Android</p>
+                        </a>
+
+                        <ul class="sub sub1">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>iOS/Android</p>
+                                        <p>Android Crossing: Pocket Camp</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="sort sort2">
+                    <li>
+                        <a href="#">
+                            <div><img src="./images/featured-amiibo.jpg" alt=""></div>
+                            <p>Nintendo 3DS</p>
+                        </a>
+
+                        <ul class="sub sub2">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>Nintendo 3DS</p>
+                                        <p>Animal Crossing: New Leaf - Welcome amiibo</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <ul class="sort sort3">
+                    <li>
+                        <a href="#">
+                            <div><img src="./images/featured-designer.jpg" alt=""></div>
+                            <p>Nintendo 3DS</p>
+                        </a>
+
+                        <ul class="sub sub3">
+                            <li>
+                                <a href="#">
+                                    <div>
+                                        <p>Nintendo 3DS</p>
+                                        <p>Animal Crossing: Happy Home Designer</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div><p>More games on Nintendo.com:</p></div>
+            <div class="sortMenu">
+                <ul>
+                    <li><a href="#">Nintendo Switch</a></li>
+                    <li><a href="#">Nintendo 3DS</a></li>
+                    <li><a href="#">Wii U</a></li>
+                    <li><a href="#">Mobile</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- other games end -->
+        <!-- amiibo figures start -->
+        <div class="figures-container">
+            <div class="leaf">
+                <div>
+                    <h1>Featured amiibo<sup>TM</sup> figures</h1>
+                </div>
+                <div class="figures">
+                    <ul>
+                        <li><a href="#">
+                            <div class="figure"><img src="./images/amiibo-isabelle.png" alt=""></div>
+                            <span>Isabelle - Summer Outfit</span>
+                        </a></li>
+                        <li><a href="#">
+                            <div class="figure"><img src="./images/amiibo-kapn.png" alt=""></div>
+                            <span>Kapp'n</span>
+                        </a></li>
+                        <li><a href="#">
+                            <div class="figure"><img src="./images/amiibo-rover.png" alt=""></div>
+                            <span>Rover</span>
+                        </a></li>
+                        <li><a href="#">
+                            <div class="figure"><img src="./images/amiibo-timmytommy.png" alt=""></div>
+                            <span>Timmy & Tommy</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="catalog"><a href="#"><span>View amiibo catalog</span></a></div>
+                <div class="town-image"></div>
+            </div>
+        </div>
+        <!-- amiibo figures end -->
+        <!-- friends play start -->
+        <div class="play-container">
+            <div><img src="./images/char-isabelle.png" alt=""></div>
+            <div class="play-contents">
+                <div><h1>Isabelle and friends on Play Nintendo</h1></div>
+                <div class="plays">
+                    <ul class="playLink">
+                        <li><a href="#">
+                            <div class="kart">
+                                <div><img src="./images/wishlist1.jpg" alt=""></div>
+                                <div class="playBox playBox1">
+                                    <div>
+                                        <div class="playTitle"><span>PRINT & PLAY</span></div>
+                                        <div>
+                                            <h4>Holiday Wish list</h4>
+                                        </div>
+                                        <div>
+                                            <p>
+                                                You can let everyone know which systems, games, & accessories are on the top of your holiday wish list!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="circle circle1"><span>🖨️</span></div>
+                            </div>
+                        </a></li>
+                        <li><a href="#">
+                            <div class="kart">
+                                <div class="playBox playBox2">
+                                    <div>
+                                        <div class="playTitle"><span>NEWS</span></div>
+                                        <div>
+                                            <h4>Wave 2 is here!</h4>
+                                        </div>
+                                        <div>
+                                            <p>The second wave of courses for the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is available now!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><img src="./images/wishlist2.jpg" alt=""></div>
+                                <div class="circle circle2"><span>📢</span></div>
+                            </div>
+                        </a></li>
+                    </ul>
+                    <ul class="playLink">
+                        <li><a href="#">
+                            <div class="kart">
+                                <div class="playBox playBox3">
+                                    <div>
+                                        <div class="playTitle"><span>POLL</span></div>
+                                        <div>
+                                            <h4>First Course, Wave 2!</h4>
+                                        </div>
+                                        <div>
+                                            <p>Which Wave 2 course would you want to play first in the Mario Kart 8 Deluxe - Booster Course Pass paid DLC?</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><img src="./images/wishlist3.jpg" alt=""></div>
+                                <div class="circle circle3"><span>🗳️</span></div>
+                            </div>
+                        </a></li>
+                        <li><a href="#">
+                            <div class="kart">
+                                <div class="playBox playBox4">
+                                    <div>
+                                        <div class="playTitle"><span>VIDEO</span></div>
+                                        <div>
+                                            <h4>New courses are here!</h4>
+                                        </div>
+                                        <div>
+                                            <p>Wave 1 of the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is here with 8 new courses!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div><img src="./images/wishlist4.jpg" alt=""></div>
+                                <div class="circle circle4"><span>▶️</span></div>
+                            </div>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- friends play end -->
+    </section>
+    
+    <footer>
+        <div class="SNS-container">
+            <div class="SNS-bg">
+                <div>
+                    <div class="mabel"><img src="./images/char-mabel.png" alt=""></div>
+                    <div class="harriet"><img src="./images/char-harriet.png" alt=""></div>
+                    <div class="btnBox">
+                        <!-- <img src="./images/facebook-speechbubble_2x.png" alt=""> -->
+                        <span class="snsBtn">Follow Isabelle on <a href="#"><u>Twitter</u></a></span>
+                    </div>
+                    <div class="lyle"><img src="./images/char-lyle.png" alt=""></div>
+                </div>
+            </div>
+            <div class="ribbon-bottom"></div>
+        </div>
+        <!-- sns: twitter btn end -->
+        <!-- footer -->
+        <div class="support-container">
+            <div class="tree-bg"></div>
+            <div class="supportBtn"><a href="#"><span>Customer Support</span></a></div>
+            <div class="support-contents">
+                <div class="sns-icons">
+                    <div class="amiibo-icon"><a href="#"><img src="./images/logo-amiibo.svg" alt=""></a></div>
+                    <div>
+                        <div class="follow-text"><h3>Follow Nintendo:</h3></div>
+                        <div class="follow-sns">
+                            <div class="facebook-icon"><a href="#"><img src="./images/logo-facebook.svg" alt=""></a></div>
+                            <div class="twitter-icon"><a href="#"><img src="./images/logo-twitter.svg" alt=""></a></div>
+                            <div class="youtube-icon"><a href="#"><img src="./images/logo-youtube.svg" alt=""></a></div>
+                            <div class="insta-icon"><a href="#"><img src="./images/logo-instagram.svg" alt=""></a></div>
+                        </div>
+                    </div>
+                    <div class="esrb">
+                        <div class="esrb1"><a href="#"><img src="./images/en-e.svg" alt=""></a></div>
+                        <div class="esrb2"><a href="#"><img src="./images/logo-esrb-privacy-certified-kids.svg" alt=""></a></div>
+                    </div>
+                </div>
+
+                <div class="footer-link">
+                    <ul>
+                        <li><a href="#">Privacy Policy</a><span>|</span></li>
+                        <li><a href="#">Terms of Use</a><span>|</span></li>
+                        <li><a href="#">Cookie Preferences</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-text">
+                    <p>
+                        For Nintendo 3DS systems, use Parental Controls to restrict 3D mode for children 6 and under. <br>
+                        Internet access required for online features. For more info, go to support.nintendo.com. <br>
+                        Games and amiibo accessories sold separately. Figures shown not actual size. Compatibility and functionality of amiibo may vary per game. Visit <a href="#"><u>amiibo.com</u></a> for specific details on how each amiibo works. <br>
+                        © 2001 - 2022 Nintendo. Nintendo properties are trademarks of Nintendo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
