@@ -285,6 +285,7 @@
         .news{
             background-color: #fcc52a;
             height:720px;
+            width: 100%;
         }
         /* error */
         .newsBox{
@@ -292,6 +293,7 @@
             background-size:180px;
             background-position: top center;
             height:360px;
+            width: 100%;
         }
         .newsBox>h1{
             font-size: 40px;
@@ -320,9 +322,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            transition: .2s;
         }
         .item:hover{
             outline: 10px solid #8d000c;
+            text-decoration: none;
+            transform: scale(1.03);
         }
         .item>div:nth-of-type(1){ 
             padding:20px;
@@ -343,11 +348,15 @@
             padding: 20px;
             border-radius: 40px;
         }
-        .item a{
+        .item span{
             color:#C4161C;
             font-size:18px;
             font-weight: bold;
             font-family: 'Arvo';
+        }
+        .item:hover span{
+            color: #834B16;
+            text-decoration: underline;
         }
 
         /* .seeNews{
@@ -1030,366 +1039,413 @@
                 transform:translateX(1600px);
             } */
         }
+
+
+        @media screen and (max-width: 1600px) {
+            .container{ width: 100%; }
+            .itemBox{ width: 100%; }
+        }
+
+        @media screen and (max-width: 840px) {
+            .birthday{ width: 100%; }
+            .ribbon{ background-size: 100% 250px; width: 98%; 
+                display: flex; justify-content: center;
+                gap: 10%;
+                align-items: center;
+            }
+            .ribbon>div:nth-of-type(1){
+                width: 100%;
+                padding-left: 50px;
+            }
+            .ribbon>div:nth-of-type(3){
+                width: 100%;
+            }
+            /* .gift{
+                width: 100%;
+            } */
+            .news{width: 100%;}
+            .newsBox{width: 100%;}
+            /* .itemBox{ width: 100%; flex-wrap: wrap;} */
+            .itemBox{ width: 100%; }
+            .item{ 
+                /* width: calc(100%/3);  */
+            }
+            .video>div{ width: 98%; }
+            .video iframe{ width: 100%; }
+            .video>div:nth-of-type(2){ text-align: center;}
+            .gameContents{ width: 100%; }
+            /* .sort{width: calc((100%-100px)/3);} */
+
+            .play-container>div>img{ display: none; }
+            .plays{ width: 98%; }
+
+            .harriet{ display: none; }
+        }
+
+        @media screen and (max-width: 600px){
+            .itemBox{ flex-wrap: wrap; }
+            .gameContents{ flex-wrap: wrap; }
+            .sortMenu>ul{ flex-wrap: wrap ;}
+            .figures>ul{ flex-wrap: wrap; }
+            .playLink{ flex-wrap: wrap; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <div class="header-contents">
-                <h1><a href="index.html">Nintendo<img src="./images/nintendo-racetrack.svg" alt=""></a></h1>
+    <div class="container">
+        <header>
+            <div class="header-container">
+                <div class="header-contents">
+                    <h1><a href="index.html">Nintendo<img src="./images/nintendo-racetrack.svg" alt=""></a></h1>
+                </div>
+                <nav class="lnb">
+                    <a href="#" class="sign"><i class='bx bxs-user'></i> <span>Log in / Sign up</span></a>
+                </nav>
             </div>
-            <nav class="lnb">
-                <a href="#" class="sign"><i class='bx bxs-user'></i> <span>Log in / Sign up</span></a>
-            </nav>
-        </div>
-        <div class="bar">
-            <div class="play">
-                <button class="rdc"><a href="#" class="reduce">REDUCE MOTION<i class='bx bx-pause'></i></a></button>
-                <button class="enb"><a href="#" class="enable">ENABLE MOTION<i class='bx bx-play' ></i></a></button>
+            <div class="bar">
+                <div class="play">
+                    <button class="rdc"><a href="#" class="reduce">REDUCE MOTION<i class='bx bx-pause'></i></a></button>
+                    <button class="enb"><a href="#" class="enable">ENABLE MOTION<i class='bx bx-play' ></i></a></button>
+                </div>
             </div>
-        </div>
-    </header>
-    <section>
-        <div class="tr"></div>
-        <div class="mainBanner">
-            <h1>Official home of</h1>
-            <img src="./images/logo.png" alt="">
-            <img src="./images/sign_2x.png" alt="">
-            <p>Make friends with adorable animal villagers and have fun creating a world of your own in the Animal Crossing series.</p>   
-            <img src="./images/isabelle.png" alt=""> 
-        </div>
-        <!-- birthday -->
-        <div class="birthday">
-            <div class="ribbon">
-                <!-- <img src="./images/birthday-ribbon.svg" alt=""> -->
+        </header>
 
-                <div>
-                    <span class="today">Today is</span>
-                    <span class="birth">Daisy's Birthday</span>
+        <section>
+            <div class="tr"></div>
+            <div class="mainBanner">
+                <h1>Official home of</h1>
+                <img src="./images/logo.png" alt="">
+                <img src="./images/sign_2x.png" alt="">
+                <p>Make friends with adorable animal villagers and have fun creating a world of your own in the Animal Crossing series.</p>
+                <img src="./images/isabelle.png" alt="">
+            </div>
+            <!-- birthday -->
+            <div class="birthday">
+                <div class="ribbon">
+                    <!-- <img src="./images/birthday-ribbon.svg" alt=""> -->
                     <div>
-                        <a href="#" class="left"><span>◀️</span></a>
-                        <a href="#" class="right"><span>▶️</span></a>
+                        <span class="today">Today is</span>
+                        <span class="birth">Daisy's Birthday</span>
+                        <div>
+                            <a href="#" class="left"><span>◀️</span></a>
+                            <a href="#" class="right"><span>▶️</span></a>
+                        </div>
                     </div>
-                </div>
-                
-                <div>
-                    <img src="./images/confetti_2x.png" alt="">
-                    <img src="./images/CTRP_EAA_NPC-dog07_1_R_ad.png" alt="">
-                </div>
-                <div>
-                    <a href="#" class="gift">
-                        <img src="./images/birthday-giftbox.png" alt="">
-                        <p>Celebrate this birthday!</p>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-
-        <div class="news">
-            <div class="newsBox">
-                <h1>Animal Crossing News</h1>
-                <div class="itemBox">
-                    <div class="item">
-                        <div>
-                            <h3>Jul 13, 2022</h3>
-                        </div>
-                        <div>
-                            <p>Hot deals coming to Amazon Prime Day</p>
-                        </div>
-                        <div><img src="./images/Switch_PrimeDay2022_Software_1920x1080.jpg" alt=""></div>
-                        <div><a href="#">Keep reading ></a></div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <h3>Jun 03, 2022</h3>
-                        </div>
-                        <div>
-                            <p>Make room for June delights in Animal Crossing: Pocket Camp</p>
-                        </div>
-                        <div><img src="./images/2205304banner_Option_2.jpg" alt=""></div>
-                        <div><a href="#">Keep reading ></a></div>
-                    </div>
-                    <div class="item">
-                        <div>
-                            <h3>Apr 29, 2022</h3>
-                        </div>
-                        <div>
-                            <p>Gracie graces the campsite this May in Animal Crossing: Pocket Camp</p>
-                        </div>
-                        <div><img src="./images/MAY_ACPC.png" alt=""></div>
-                        <div><a href="#">Keep reading ></a></div>
-                    </div>
-                </div>
-                <div class="seeNews"><a href="#" class="read"><span>See all news</span></a></div>
-            </div>
-        </div>
-
-        <div class="video">
-            <div>
-                <iframe width="896" height="480" src="https://www.youtube.com/embed/QZMaL6mp35Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-            <div><h1>Animal Crossing: New Horizons</h1></div>
-            <div>
-                <p>
-                    New to Animal Crossing: New Horizons? Come get the lay of the land and learn what to expect when you set out to create your own island paradise. If you’re an island life veteran already, we hope you will share this video with newcomers and welcome them with open arms!
-                </p>
-            </div>
-            <div><a href="#" class="web"><span>Visit the website</span></a></div>
-        </div>
-
-        <div class="otherGames">
-            <div class="Yellow"></div>
-            <div class="balloon"><img src="./images/char-balloon_2x.png" alt=""></div>
-            <div><h1>Featured Animal Crossing games</h1></div>
-            <div class="gameContents">
-                <ul class="sort sort1">
-                    <li>
-                        <a href="#">
-                            <div><img src="./images/ac-pocket-camp.png" alt=""></div>
-                            <p>iOS/Android</p>
-                        </a>
-
-                        <ul class="sub sub1">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>iOS/Android</p>
-                                        <p>Android Crossing: Pocket Camp</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <ul class="sort sort2">
-                    <li>
-                        <a href="#">
-                            <div><img src="./images/featured-amiibo.jpg" alt=""></div>
-                            <p>Nintendo 3DS</p>
-                        </a>
-
-                        <ul class="sub sub2">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>Nintendo 3DS</p>
-                                        <p>Animal Crossing: New Leaf - Welcome amiibo</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <ul class="sort sort3">
-                    <li>
-                        <a href="#">
-                            <div><img src="./images/featured-designer.jpg" alt=""></div>
-                            <p>Nintendo 3DS</p>
-                        </a>
-
-                        <ul class="sub sub3">
-                            <li>
-                                <a href="#">
-                                    <div>
-                                        <p>Nintendo 3DS</p>
-                                        <p>Animal Crossing: Happy Home Designer</p>
-                                    </div>
-                                </a>
-                            </li>
-                            <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div><p>More games on Nintendo.com:</p></div>
-            <div class="sortMenu">
-                <ul>
-                    <li><a href="#">Nintendo Switch</a></li>
-                    <li><a href="#">Nintendo 3DS</a></li>
-                    <li><a href="#">Wii U</a></li>
-                    <li><a href="#">Mobile</a></li>
-                </ul>
-            </div>
-        </div>
-        <!-- other games end -->
-        <!-- amiibo figures start -->
-        <div class="figures-container">
-            <div class="leaf">
-                <div>
-                    <h1>Featured amiibo<sup>TM</sup> figures</h1>
-                </div>
-                <div class="figures">
-                    <ul>
-                        <li><a href="#">
-                            <div class="figure"><img src="./images/amiibo-isabelle.png" alt=""></div>
-                            <span>Isabelle - Summer Outfit</span>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="figure"><img src="./images/amiibo-kapn.png" alt=""></div>
-                            <span>Kapp'n</span>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="figure"><img src="./images/amiibo-rover.png" alt=""></div>
-                            <span>Rover</span>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="figure"><img src="./images/amiibo-timmytommy.png" alt=""></div>
-                            <span>Timmy & Tommy</span>
-                        </a></li>
-                    </ul>
-                </div>
-                <div class="catalog"><a href="#"><span>View amiibo catalog</span></a></div>
-                <div class="town-image"></div>
-            </div>
-        </div>
-        <!-- amiibo figures end -->
-        <!-- friends play start -->
-        <div class="play-container">
-            <div><img src="./images/char-isabelle.png" alt=""></div>
-            <div class="play-contents">
-                <div><h1>Isabelle and friends on Play Nintendo</h1></div>
-                <div class="plays">
-                    <ul class="playLink">
-                        <li><a href="#">
-                            <div class="kart">
-                                <div><img src="./images/wishlist1.jpg" alt=""></div>
-                                <div class="playBox playBox1">
-                                    <div>
-                                        <div class="playTitle"><span>PRINT & PLAY</span></div>
-                                        <div>
-                                            <h4>Holiday Wish list</h4>
-                                        </div>
-                                        <div>
-                                            <p>
-                                                You can let everyone know which systems, games, & accessories are on the top of your holiday wish list!
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="circle circle1"><span>🖨️</span></div>
-                            </div>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="kart">
-                                <div class="playBox playBox2">
-                                    <div>
-                                        <div class="playTitle"><span>NEWS</span></div>
-                                        <div>
-                                            <h4>Wave 2 is here!</h4>
-                                        </div>
-                                        <div>
-                                            <p>The second wave of courses for the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is available now!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div><img src="./images/wishlist2.jpg" alt=""></div>
-                                <div class="circle circle2"><span>📢</span></div>
-                            </div>
-                        </a></li>
-                    </ul>
-                    <ul class="playLink">
-                        <li><a href="#">
-                            <div class="kart">
-                                <div class="playBox playBox3">
-                                    <div>
-                                        <div class="playTitle"><span>POLL</span></div>
-                                        <div>
-                                            <h4>First Course, Wave 2!</h4>
-                                        </div>
-                                        <div>
-                                            <p>Which Wave 2 course would you want to play first in the Mario Kart 8 Deluxe - Booster Course Pass paid DLC?</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div><img src="./images/wishlist3.jpg" alt=""></div>
-                                <div class="circle circle3"><span>🗳️</span></div>
-                            </div>
-                        </a></li>
-                        <li><a href="#">
-                            <div class="kart">
-                                <div class="playBox playBox4">
-                                    <div>
-                                        <div class="playTitle"><span>VIDEO</span></div>
-                                        <div>
-                                            <h4>New courses are here!</h4>
-                                        </div>
-                                        <div>
-                                            <p>Wave 1 of the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is here with 8 new courses!</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div><img src="./images/wishlist4.jpg" alt=""></div>
-                                <div class="circle circle4"><span>▶️</span></div>
-                            </div>
-                        </a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <!-- friends play end -->
-    </section>
-    
-    <footer>
-        <div class="SNS-container">
-            <div class="SNS-bg">
-                <div>
-                    <div class="mabel"><img src="./images/char-mabel.png" alt=""></div>
-                    <div class="harriet"><img src="./images/char-harriet.png" alt=""></div>
-                    <div class="btnBox">
-                        <!-- <img src="./images/facebook-speechbubble_2x.png" alt=""> -->
-                        <span class="snsBtn">Follow Isabelle on <a href="#"><u>Twitter</u></a></span>
-                    </div>
-                    <div class="lyle"><img src="./images/char-lyle.png" alt=""></div>
-                </div>
-            </div>
-            <div class="ribbon-bottom"></div>
-        </div>
-        <!-- sns: twitter btn end -->
-        <!-- footer -->
-        <div class="support-container">
-            <div class="tree-bg"></div>
-            <div class="supportBtn"><a href="#"><span>Customer Support</span></a></div>
-            <div class="support-contents">
-                <div class="sns-icons">
-                    <div class="amiibo-icon"><a href="#"><img src="./images/logo-amiibo.svg" alt=""></a></div>
+        
                     <div>
-                        <div class="follow-text"><h3>Follow Nintendo:</h3></div>
-                        <div class="follow-sns">
-                            <div class="facebook-icon"><a href="#"><img src="./images/logo-facebook.svg" alt=""></a></div>
-                            <div class="twitter-icon"><a href="#"><img src="./images/logo-twitter.svg" alt=""></a></div>
-                            <div class="youtube-icon"><a href="#"><img src="./images/logo-youtube.svg" alt=""></a></div>
-                            <div class="insta-icon"><a href="#"><img src="./images/logo-instagram.svg" alt=""></a></div>
+                        <img src="./images/confetti_2x.png" alt="">
+                        <img src="./images/CTRP_EAA_NPC-dog07_1_R_ad.png" alt="">
+                    </div>
+                    <div>
+                        <a href="#" class="gift">
+                            <img src="./images/birthday-giftbox.png" alt="">
+                            <p>Celebrate this birthday!</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="news">
+                <div class="newsBox">
+                    <h1>Animal Crossing News</h1>
+                    <div class="itemBox">
+                        <div>
+                            <a href="#" class="item">
+                                <div>
+                                    <h3>Jul 13, 2022</h3>
+                                </div>
+                                <div>
+                                    <p>Hot deals coming to Amazon Prime Day</p>
+                                </div>
+                                <div><img src="./images/Switch_PrimeDay2022_Software_1920x1080.jpg" alt=""></div>
+                                <div><span>Keep reading ></span></div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="item">
+                                <div>
+                                    <h3>Jun 03, 2022</h3>
+                                </div>
+                                <div>
+                                    <p>Make room for June delights in Animal Crossing: Pocket Camp</p>
+                                </div>
+                                <div><img src="./images/2205304banner_Option_2.jpg" alt=""></div>
+                                <div><span>Keep reading ></span></div>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="#" class="item">
+                                <div>
+                                    <h3>Apr 29, 2022</h3>
+                                </div>
+                                <div>
+                                    <p>Gracie graces the campsite this May in Animal Crossing: Pocket Camp</p>
+                                </div>
+                                <div><img src="./images/MAY_ACPC.png" alt=""></div>
+                                <div><span>Keep reading ></span></div>
+                            </a>
                         </div>
                     </div>
-                    <div class="esrb">
-                        <div class="esrb1"><a href="#"><img src="./images/en-e.svg" alt=""></a></div>
-                        <div class="esrb2"><a href="#"><img src="./images/logo-esrb-privacy-certified-kids.svg" alt=""></a></div>
-                    </div>
+                    <div class="seeNews"><a href="#" class="read"><span>See all news</span></a></div>
                 </div>
-
-                <div class="footer-link">
-                    <ul>
-                        <li><a href="#">Privacy Policy</a><span>|</span></li>
-                        <li><a href="#">Terms of Use</a><span>|</span></li>
-                        <li><a href="#">Cookie Preferences</a></li>
-                    </ul>
+            </div>
+            <div class="video">
+                <div>
+                    <iframe width="896" height="480" src="https://www.youtube.com/embed/QZMaL6mp35Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
-
-                <div class="footer-text">
+                <div><h1>Animal Crossing: New Horizons</h1></div>
+                <div>
                     <p>
-                        For Nintendo 3DS systems, use Parental Controls to restrict 3D mode for children 6 and under. <br>
-                        Internet access required for online features. For more info, go to support.nintendo.com. <br>
-                        Games and amiibo accessories sold separately. Figures shown not actual size. Compatibility and functionality of amiibo may vary per game. Visit <a href="#"><u>amiibo.com</u></a> for specific details on how each amiibo works. <br>
-                        © 2001 - 2022 Nintendo. Nintendo properties are trademarks of Nintendo.
+                        New to Animal Crossing: New Horizons? Come get the lay of the land and learn what to expect when you set out to create your own island paradise. If you’re an island life veteran already, we hope you will share this video with newcomers and welcome them with open arms!
                     </p>
                 </div>
+                <div><a href="#" class="web"><span>Visit the website</span></a></div>
             </div>
-        </div>
-    </footer>
+            <div class="otherGames">
+                <div class="Yellow"></div>
+                <div class="balloon"><img src="./images/char-balloon_2x.png" alt=""></div>
+                <div><h1>Featured Animal Crossing games</h1></div>
+                <div class="gameContents">
+                    <ul class="sort sort1">
+                        <li>
+                            <a href="#">
+                                <div><img src="./images/ac-pocket-camp.png" alt=""></div>
+                                <p>iOS/Android</p>
+                            </a>
+                            <ul class="sub sub1">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>iOS/Android</p>
+                                            <p>Android Crossing: Pocket Camp</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sort sort2">
+                        <li>
+                            <a href="#">
+                                <div><img src="./images/featured-amiibo.jpg" alt=""></div>
+                                <p>Nintendo 3DS</p>
+                            </a>
+                            <ul class="sub sub2">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>Nintendo 3DS</p>
+                                            <p>Animal Crossing: New Leaf - Welcome amiibo</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="sort sort3">
+                        <li>
+                            <a href="#">
+                                <div><img src="./images/featured-designer.jpg" alt=""></div>
+                                <p>Nintendo 3DS</p>
+                            </a>
+                            <ul class="sub sub3">
+                                <li>
+                                    <a href="#">
+                                        <div>
+                                            <p>Nintendo 3DS</p>
+                                            <p>Animal Crossing: Happy Home Designer</p>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li><a href="#" class="LearnBtn"><span>Learn more</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div><p>More games on Nintendo.com:</p></div>
+                <div class="sortMenu">
+                    <ul>
+                        <li><a href="#">Nintendo Switch</a></li>
+                        <li><a href="#">Nintendo 3DS</a></li>
+                        <li><a href="#">Wii U</a></li>
+                        <li><a href="#">Mobile</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- other games end -->
+            <!-- amiibo figures start -->
+            <div class="figures-container">
+                <div class="leaf">
+                    <div>
+                        <h1>Featured amiibo<sup>TM</sup> figures</h1>
+                    </div>
+                    <div class="figures">
+                        <ul>
+                            <li><a href="#">
+                                <div class="figure"><img src="./images/amiibo-isabelle.png" alt=""></div>
+                                <span>Isabelle - Summer Outfit</span>
+                            </a></li>
+                            <li><a href="#">
+                                <div class="figure"><img src="./images/amiibo-kapn.png" alt=""></div>
+                                <span>Kapp'n</span>
+                            </a></li>
+                            <li><a href="#">
+                                <div class="figure"><img src="./images/amiibo-rover.png" alt=""></div>
+                                <span>Rover</span>
+                            </a></li>
+                            <li><a href="#">
+                                <div class="figure"><img src="./images/amiibo-timmytommy.png" alt=""></div>
+                                <span>Timmy & Tommy</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    <div class="catalog"><a href="#"><span>View amiibo catalog</span></a></div>
+                    <div class="town-image"></div>
+                </div>
+            </div>
+            <!-- amiibo figures end -->
+            <!-- friends play start -->
+            <div class="play-container">
+                <div><img src="./images/char-isabelle.png" alt=""></div>
+                <div class="play-contents">
+                    <div><h1>Isabelle and friends on Play Nintendo</h1></div>
+                    <div class="plays">
+                        <ul class="playLink">
+                            <li><a href="#">
+                                <div class="kart">
+                                    <div><img src="./images/wishlist1.jpg" alt=""></div>
+                                    <div class="playBox playBox1">
+                                        <div>
+                                            <div class="playTitle"><span>PRINT & PLAY</span></div>
+                                            <div>
+                                                <h4>Holiday Wish list</h4>
+                                            </div>
+                                            <div>
+                                                <p>
+                                                    You can let everyone know which systems, games, & accessories are on the top of your holiday wish list!
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="circle circle1"><span>🖨️</span></div>
+                                </div>
+                            </a></li>
+                            <li><a href="#">
+                                <div class="kart">
+                                    <div class="playBox playBox2">
+                                        <div>
+                                            <div class="playTitle"><span>NEWS</span></div>
+                                            <div>
+                                                <h4>Wave 2 is here!</h4>
+                                            </div>
+                                            <div>
+                                                <p>The second wave of courses for the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is available now!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div><img src="./images/wishlist2.jpg" alt=""></div>
+                                    <div class="circle circle2"><span>📢</span></div>
+                                </div>
+                            </a></li>
+                        </ul>
+                        <ul class="playLink">
+                            <li><a href="#">
+                                <div class="kart">
+                                    <div class="playBox playBox3">
+                                        <div>
+                                            <div class="playTitle"><span>POLL</span></div>
+                                            <div>
+                                                <h4>First Course, Wave 2!</h4>
+                                            </div>
+                                            <div>
+                                                <p>Which Wave 2 course would you want to play first in the Mario Kart 8 Deluxe - Booster Course Pass paid DLC?</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div><img src="./images/wishlist3.jpg" alt=""></div>
+                                    <div class="circle circle3"><span>🗳️</span></div>
+                                </div>
+                            </a></li>
+                            <li><a href="#">
+                                <div class="kart">
+                                    <div class="playBox playBox4">
+                                        <div>
+                                            <div class="playTitle"><span>VIDEO</span></div>
+                                            <div>
+                                                <h4>New courses are here!</h4>
+                                            </div>
+                                            <div>
+                                                <p>Wave 1 of the Mario Kart 8 Deluxe - Booster Course Pass paid DLC is here with 8 new courses!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div><img src="./images/wishlist4.jpg" alt=""></div>
+                                    <div class="circle circle4"><span>▶️</span></div>
+                                </div>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- friends play end -->
+        </section>
+        
+        <footer>
+            <div class="SNS-container">
+                <div class="SNS-bg">
+                    <div>
+                        <div class="mabel"><img src="./images/char-mabel.png" alt=""></div>
+                        <div class="harriet"><img src="./images/char-harriet.png" alt=""></div>
+                        <div class="btnBox">
+                            <!-- <img src="./images/facebook-speechbubble_2x.png" alt=""> -->
+                            <span class="snsBtn">Follow Isabelle on <a href="#"><u>Twitter</u></a></span>
+                        </div>
+                        <div class="lyle"><img src="./images/char-lyle.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="ribbon-bottom"></div>
+            </div>
+            <!-- sns: twitter btn end -->
+            <!-- footer -->
+            <div class="support-container">
+                <div class="tree-bg"></div>
+                <div class="supportBtn"><a href="#"><span>Customer Support</span></a></div>
+                <div class="support-contents">
+                    <div class="sns-icons">
+                        <div class="amiibo-icon"><a href="#"><img src="./images/logo-amiibo.svg" alt=""></a></div>
+                        <div>
+                            <div class="follow-text"><h3>Follow Nintendo:</h3></div>
+                            <div class="follow-sns">
+                                <div class="facebook-icon"><a href="#"><img src="./images/logo-facebook.svg" alt=""></a></div>
+                                <div class="twitter-icon"><a href="#"><img src="./images/logo-twitter.svg" alt=""></a></div>
+                                <div class="youtube-icon"><a href="#"><img src="./images/logo-youtube.svg" alt=""></a></div>
+                                <div class="insta-icon"><a href="#"><img src="./images/logo-instagram.svg" alt=""></a></div>
+                            </div>
+                        </div>
+                        <div class="esrb">
+                            <div class="esrb1"><a href="#"><img src="./images/en-e.svg" alt=""></a></div>
+                            <div class="esrb2"><a href="#"><img src="./images/logo-esrb-privacy-certified-kids.svg" alt=""></a></div>
+                        </div>
+                    </div>
+                    <div class="footer-link">
+                        <ul>
+                            <li><a href="#">Privacy Policy</a><span>|</span></li>
+                            <li><a href="#">Terms of Use</a><span>|</span></li>
+                            <li><a href="#">Cookie Preferences</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-text">
+                        <p>
+                            For Nintendo 3DS systems, use Parental Controls to restrict 3D mode for children 6 and under. <br>
+                            Internet access required for online features. For more info, go to support.nintendo.com. <br>
+                            Games and amiibo accessories sold separately. Figures shown not actual size. Compatibility and functionality of amiibo may vary per game. Visit <a href="#"><u>amiibo.com</u></a> for specific details on how each amiibo works. <br>
+                            © 2001 - 2022 Nintendo. Nintendo properties are trademarks of Nintendo.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 </html>
